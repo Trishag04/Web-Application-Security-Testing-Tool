@@ -1,0 +1,3237 @@
+===== Web Application Security Scan Report =====
+Target URL: http://testphp.vulnweb.com/
+Scan Time: 2025-05-18 20:01:11
+
+---- Basic Scan Results ----
+Headers:
+{
+  "Server": "nginx/1.19.0",
+  "Date": "Sun, 18 May 2025 14:11:36 GMT",
+  "Content-Type": "text/html; charset=UTF-8",
+  "Transfer-Encoding": "chunked",
+  "Connection": "keep-alive",
+  "X-Powered-By": "PHP/5.6.40-38+ubuntu20.04.1+deb.sury.org+1",
+  "Content-Encoding": "gzip"
+}
+Cookies:
+{}
+
+---- Form Fuzzing Results ----
+Form #1:
+  Payload: <script>alert('XSS')</script>
+  Result URL: http://testphp.vulnweb.com/search.php?test=query
+
+Form #1:
+  Payload: ' OR '1'='1
+  Result URL: http://testphp.vulnweb.com/search.php?test=query
+
+Form #1:
+  Payload: <img src=x onerror=alert('xss')>
+  Result URL: http://testphp.vulnweb.com/search.php?test=query
+
+---- ZAP Vulnerability Scan ----
+Alert: Missing Anti-clickjacking Header
+Risk Level: Medium
+Confidence: Medium
+URL: http://testphp.vulnweb.com/
+
+Alert: Charset Mismatch (Header Versus Meta Content-Type Charset)
+Risk Level: Informational
+Confidence: Low
+URL: http://testphp.vulnweb.com/
+
+Alert: Content Security Policy (CSP) Header Not Set
+Risk Level: Medium
+Confidence: High
+URL: http://testphp.vulnweb.com/
+
+Alert: Absence of Anti-CSRF Tokens
+Risk Level: Medium
+Confidence: Low
+URL: http://testphp.vulnweb.com/
+
+Alert: Server Leaks Version Information via "Server" HTTP Response Header Field
+Risk Level: Low
+Confidence: High
+URL: http://testphp.vulnweb.com/
+
+Alert: X-Content-Type-Options Header Missing
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/
+
+Alert: Server Leaks Information via "X-Powered-By" HTTP Response Header Field(s)
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/
+
+Alert: Missing Anti-clickjacking Header
+Risk Level: Medium
+Confidence: Medium
+URL: http://testphp.vulnweb.com/index.php
+
+Alert: Missing Anti-clickjacking Header
+Risk Level: Medium
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/
+
+Alert: Content Security Policy (CSP) Header Not Set
+Risk Level: Medium
+Confidence: High
+URL: http://testphp.vulnweb.com/sitemap.xml
+
+Alert: Missing Anti-clickjacking Header
+Risk Level: Medium
+Confidence: Medium
+URL: http://testphp.vulnweb.com/artists.php
+
+Alert: Missing Anti-clickjacking Header
+Risk Level: Medium
+Confidence: Medium
+URL: http://testphp.vulnweb.com/categories.php
+
+Alert: Missing Anti-clickjacking Header
+Risk Level: Medium
+Confidence: Medium
+URL: http://testphp.vulnweb.com/guestbook.php
+
+Alert: Missing Anti-clickjacking Header
+Risk Level: Medium
+Confidence: Medium
+URL: http://testphp.vulnweb.com/login.php
+
+Alert: Missing Anti-clickjacking Header
+Risk Level: Medium
+Confidence: Medium
+URL: http://testphp.vulnweb.com/disclaimer.php
+
+Alert: Content Security Policy (CSP) Header Not Set
+Risk Level: Medium
+Confidence: High
+URL: http://testphp.vulnweb.com/high
+
+Alert: Content Security Policy (CSP) Header Not Set
+Risk Level: Medium
+Confidence: High
+URL: http://testphp.vulnweb.com/robots.txt
+
+Alert: Server Leaks Version Information via "Server" HTTP Response Header Field
+Risk Level: Low
+Confidence: High
+URL: http://testphp.vulnweb.com/userinfo.php
+
+Alert: Server Leaks Information via "X-Powered-By" HTTP Response Header Field(s)
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/userinfo.php
+
+Alert: Server Leaks Version Information via "Server" HTTP Response Header Field
+Risk Level: Low
+Confidence: High
+URL: http://testphp.vulnweb.com/sitemap.xml
+
+Alert: Server Leaks Version Information via "Server" HTTP Response Header Field
+Risk Level: Low
+Confidence: High
+URL: http://testphp.vulnweb.com/high
+
+Alert: Server Leaks Version Information via "Server" HTTP Response Header Field
+Risk Level: Low
+Confidence: High
+URL: http://testphp.vulnweb.com/robots.txt
+
+Alert: Charset Mismatch (Header Versus Meta Content-Type Charset)
+Risk Level: Informational
+Confidence: Low
+URL: http://testphp.vulnweb.com/artists.php
+
+Alert: Charset Mismatch (Header Versus Meta Content-Type Charset)
+Risk Level: Informational
+Confidence: Low
+URL: http://testphp.vulnweb.com/guestbook.php
+
+Alert: Charset Mismatch (Header Versus Meta Content-Type Charset)
+Risk Level: Informational
+Confidence: Low
+URL: http://testphp.vulnweb.com/index.php
+
+Alert: Content Security Policy (CSP) Header Not Set
+Risk Level: Medium
+Confidence: High
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/
+
+Alert: Charset Mismatch (Header Versus Meta Content-Type Charset)
+Risk Level: Informational
+Confidence: Low
+URL: http://testphp.vulnweb.com/categories.php
+
+Alert: Charset Mismatch (Header Versus Meta Content-Type Charset)
+Risk Level: Informational
+Confidence: Low
+URL: http://testphp.vulnweb.com/disclaimer.php
+
+Alert: Charset Mismatch (Header Versus Meta Content-Type Charset)
+Risk Level: Informational
+Confidence: Low
+URL: http://testphp.vulnweb.com/login.php
+
+Alert: Content Security Policy (CSP) Header Not Set
+Risk Level: Medium
+Confidence: High
+URL: http://testphp.vulnweb.com/guestbook.php
+
+Alert: Content Security Policy (CSP) Header Not Set
+Risk Level: Medium
+Confidence: High
+URL: http://testphp.vulnweb.com/categories.php
+
+Alert: Content Security Policy (CSP) Header Not Set
+Risk Level: Medium
+Confidence: High
+URL: http://testphp.vulnweb.com/artists.php
+
+Alert: Content Security Policy (CSP) Header Not Set
+Risk Level: Medium
+Confidence: High
+URL: http://testphp.vulnweb.com/index.php
+
+Alert: Content Security Policy (CSP) Header Not Set
+Risk Level: Medium
+Confidence: High
+URL: http://testphp.vulnweb.com/login.php
+
+Alert: Content Security Policy (CSP) Header Not Set
+Risk Level: Medium
+Confidence: High
+URL: http://testphp.vulnweb.com/disclaimer.php
+
+Alert: Missing Anti-clickjacking Header
+Risk Level: Medium
+Confidence: Medium
+URL: http://testphp.vulnweb.com/AJAX/index.php
+
+Alert: Content Security Policy (CSP) Header Not Set
+Risk Level: Medium
+Confidence: High
+URL: http://testphp.vulnweb.com/privacy.php
+
+Alert: Missing Anti-clickjacking Header
+Risk Level: Medium
+Confidence: Medium
+URL: http://testphp.vulnweb.com/cart.php
+
+Alert: Server Leaks Version Information via "Server" HTTP Response Header Field
+Risk Level: Low
+Confidence: High
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/
+
+Alert: Server Leaks Version Information via "Server" HTTP Response Header Field
+Risk Level: Low
+Confidence: High
+URL: http://testphp.vulnweb.com/style.css
+
+Alert: Absence of Anti-CSRF Tokens
+Risk Level: Medium
+Confidence: Low
+URL: http://testphp.vulnweb.com/guestbook.php
+
+Alert: Absence of Anti-CSRF Tokens
+Risk Level: Medium
+Confidence: Low
+URL: http://testphp.vulnweb.com/categories.php
+
+Alert: Absence of Anti-CSRF Tokens
+Risk Level: Medium
+Confidence: Low
+URL: http://testphp.vulnweb.com/disclaimer.php
+
+Alert: Absence of Anti-CSRF Tokens
+Risk Level: Medium
+Confidence: Low
+URL: http://testphp.vulnweb.com/artists.php
+
+Alert: Absence of Anti-CSRF Tokens
+Risk Level: Medium
+Confidence: Low
+URL: http://testphp.vulnweb.com/login.php
+
+Alert: Absence of Anti-CSRF Tokens
+Risk Level: Medium
+Confidence: Low
+URL: http://testphp.vulnweb.com/index.php
+
+Alert: X-Content-Type-Options Header Missing
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/style.css
+
+Alert: X-Content-Type-Options Header Missing
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/
+
+Alert: Absence of Anti-CSRF Tokens
+Risk Level: Medium
+Confidence: Low
+URL: http://testphp.vulnweb.com/guestbook.php
+
+Alert: Server Leaks Version Information via "Server" HTTP Response Header Field
+Risk Level: Low
+Confidence: High
+URL: http://testphp.vulnweb.com/privacy.php
+
+Alert: Charset Mismatch (Header Versus Meta Content-Type Charset)
+Risk Level: Informational
+Confidence: Low
+URL: http://testphp.vulnweb.com/AJAX/index.php
+
+Alert: Charset Mismatch (Header Versus Meta Content-Type Charset)
+Risk Level: Informational
+Confidence: Low
+URL: http://testphp.vulnweb.com/cart.php
+
+Alert: Server Leaks Information via "X-Powered-By" HTTP Response Header Field(s)
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/
+
+Alert: Modern Web Application
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/artists.php
+
+Alert: Absence of Anti-CSRF Tokens
+Risk Level: Medium
+Confidence: Low
+URL: http://testphp.vulnweb.com/login.php
+
+Alert: Server Leaks Information via "X-Powered-By" HTTP Response Header Field(s)
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/privacy.php
+
+Alert: Content Security Policy (CSP) Header Not Set
+Risk Level: Medium
+Confidence: High
+URL: http://testphp.vulnweb.com/AJAX/index.php
+
+Alert: Content Security Policy (CSP) Header Not Set
+Risk Level: Medium
+Confidence: High
+URL: http://testphp.vulnweb.com/cart.php
+
+Alert: Server Leaks Version Information via "Server" HTTP Response Header Field
+Risk Level: Low
+Confidence: High
+URL: http://testphp.vulnweb.com/disclaimer.php
+
+Alert: Server Leaks Version Information via "Server" HTTP Response Header Field
+Risk Level: Low
+Confidence: High
+URL: http://testphp.vulnweb.com/categories.php
+
+Alert: Server Leaks Version Information via "Server" HTTP Response Header Field
+Risk Level: Low
+Confidence: High
+URL: http://testphp.vulnweb.com/images/logo.gif
+
+Alert: Server Leaks Version Information via "Server" HTTP Response Header Field
+Risk Level: Low
+Confidence: High
+URL: http://testphp.vulnweb.com/guestbook.php
+
+Alert: Server Leaks Version Information via "Server" HTTP Response Header Field
+Risk Level: Low
+Confidence: High
+URL: http://testphp.vulnweb.com/index.php
+
+Alert: Missing Anti-clickjacking Header
+Risk Level: Medium
+Confidence: Medium
+URL: http://testphp.vulnweb.com/hpp/
+
+Alert: Server Leaks Version Information via "Server" HTTP Response Header Field
+Risk Level: Low
+Confidence: High
+URL: http://testphp.vulnweb.com/artists.php
+
+Alert: Missing Anti-clickjacking Header
+Risk Level: Medium
+Confidence: Medium
+URL: http://testphp.vulnweb.com/search.php?test=query
+
+Alert: Server Leaks Version Information via "Server" HTTP Response Header Field
+Risk Level: Low
+Confidence: High
+URL: http://testphp.vulnweb.com/login.php
+
+Alert: Modern Web Application
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/AJAX/index.php
+
+Alert: Absence of Anti-CSRF Tokens
+Risk Level: Medium
+Confidence: Low
+URL: http://testphp.vulnweb.com/cart.php
+
+Alert: X-Content-Type-Options Header Missing
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/categories.php
+
+Alert: X-Content-Type-Options Header Missing
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/images/logo.gif
+
+Alert: X-Content-Type-Options Header Missing
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/index.php
+
+Alert: X-Content-Type-Options Header Missing
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/disclaimer.php
+
+Alert: X-Content-Type-Options Header Missing
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/artists.php
+
+Alert: X-Content-Type-Options Header Missing
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/guestbook.php
+
+Alert: Content Security Policy (CSP) Header Not Set
+Risk Level: Medium
+Confidence: High
+URL: http://testphp.vulnweb.com/hpp/
+
+Alert: Server Leaks Version Information via "Server" HTTP Response Header Field
+Risk Level: Low
+Confidence: High
+URL: http://testphp.vulnweb.com/AJAX/index.php
+
+Alert: X-Content-Type-Options Header Missing
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/login.php
+
+Alert: Charset Mismatch (Header Versus Meta Content-Type Charset)
+Risk Level: Informational
+Confidence: Low
+URL: http://testphp.vulnweb.com/search.php?test=query
+
+Alert: Server Leaks Information via "X-Powered-By" HTTP Response Header Field(s)
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/categories.php
+
+Alert: Server Leaks Information via "X-Powered-By" HTTP Response Header Field(s)
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/index.php
+
+Alert: Server Leaks Information via "X-Powered-By" HTTP Response Header Field(s)
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/artists.php
+
+Alert: Server Leaks Information via "X-Powered-By" HTTP Response Header Field(s)
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/guestbook.php
+
+Alert: Server Leaks Information via "X-Powered-By" HTTP Response Header Field(s)
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/disclaimer.php
+
+Alert: Server Leaks Version Information via "Server" HTTP Response Header Field
+Risk Level: Low
+Confidence: High
+URL: http://testphp.vulnweb.com/cart.php
+
+Alert: Missing Anti-clickjacking Header
+Risk Level: Medium
+Confidence: Medium
+URL: http://testphp.vulnweb.com/listproducts.php?cat=1
+
+Alert: Server Leaks Version Information via "Server" HTTP Response Header Field
+Risk Level: Low
+Confidence: High
+URL: http://testphp.vulnweb.com/hpp/
+
+Alert: Server Leaks Information via "X-Powered-By" HTTP Response Header Field(s)
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/login.php
+
+Alert: Content Security Policy (CSP) Header Not Set
+Risk Level: Medium
+Confidence: High
+URL: http://testphp.vulnweb.com/search.php?test=query
+
+Alert: X-Content-Type-Options Header Missing
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/AJAX/index.php
+
+Alert: X-Content-Type-Options Header Missing
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/hpp/
+
+Alert: X-Content-Type-Options Header Missing
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/cart.php
+
+Alert: Missing Anti-clickjacking Header
+Risk Level: Medium
+Confidence: Medium
+URL: http://testphp.vulnweb.com/listproducts.php?cat=2
+
+Alert: Server Leaks Information via "X-Powered-By" HTTP Response Header Field(s)
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/AJAX/index.php
+
+Alert: Missing Anti-clickjacking Header
+Risk Level: Medium
+Confidence: Medium
+URL: http://testphp.vulnweb.com/listproducts.php?cat=3
+
+Alert: Missing Anti-clickjacking Header
+Risk Level: Medium
+Confidence: Medium
+URL: http://testphp.vulnweb.com/artists.php?artist=1
+
+Alert: Missing Anti-clickjacking Header
+Risk Level: Medium
+Confidence: Medium
+URL: http://testphp.vulnweb.com/listproducts.php?cat=4
+
+Alert: Absence of Anti-CSRF Tokens
+Risk Level: Medium
+Confidence: Low
+URL: http://testphp.vulnweb.com/search.php?test=query
+
+Alert: Missing Anti-clickjacking Header
+Risk Level: Medium
+Confidence: Medium
+URL: http://testphp.vulnweb.com/signup.php
+
+Alert: Missing Anti-clickjacking Header
+Risk Level: Medium
+Confidence: Medium
+URL: http://testphp.vulnweb.com/artists.php?artist=3
+
+Alert: Charset Mismatch (Header Versus Meta Content-Type Charset)
+Risk Level: Informational
+Confidence: Low
+URL: http://testphp.vulnweb.com/listproducts.php?cat=1
+
+Alert: Server Leaks Version Information via "Server" HTTP Response Header Field
+Risk Level: Low
+Confidence: High
+URL: http://testphp.vulnweb.com/Flash/add.swf
+
+Alert: Server Leaks Information via "X-Powered-By" HTTP Response Header Field(s)
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/hpp/
+
+Alert: Server Leaks Information via "X-Powered-By" HTTP Response Header Field(s)
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/cart.php
+
+Alert: Content Security Policy (CSP) Header Not Set
+Risk Level: Medium
+Confidence: High
+URL: http://testphp.vulnweb.com/listproducts.php?cat=1
+
+Alert: Charset Mismatch (Header Versus Meta Content-Type Charset)
+Risk Level: Informational
+Confidence: Low
+URL: http://testphp.vulnweb.com/listproducts.php?cat=2
+
+Alert: X-Content-Type-Options Header Missing
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Flash/add.swf
+
+Alert: Charset Mismatch (Header Versus Meta Content-Type Charset)
+Risk Level: Informational
+Confidence: Low
+URL: http://testphp.vulnweb.com/listproducts.php?cat=3
+
+Alert: Missing Anti-clickjacking Header
+Risk Level: Medium
+Confidence: Medium
+URL: http://testphp.vulnweb.com/artists.php?artist=2
+
+Alert: Charset Mismatch (Header Versus Meta Content-Type Charset)
+Risk Level: Informational
+Confidence: Low
+URL: http://testphp.vulnweb.com/signup.php
+
+Alert: Charset Mismatch (Header Versus Meta Content-Type Charset)
+Risk Level: Informational
+Confidence: Low
+URL: http://testphp.vulnweb.com/artists.php?artist=1
+
+Alert: Charset Mismatch (Header Versus Meta Content-Type Charset)
+Risk Level: Informational
+Confidence: Low
+URL: http://testphp.vulnweb.com/listproducts.php?cat=4
+
+Alert: Missing Anti-clickjacking Header
+Risk Level: Medium
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/network-attached-storage-dlink/1/
+
+Alert: Charset Mismatch (Header Versus Meta Content-Type Charset)
+Risk Level: Informational
+Confidence: Low
+URL: http://testphp.vulnweb.com/artists.php?artist=3
+
+Alert: Server Leaks Version Information via "Server" HTTP Response Header Field
+Risk Level: Low
+Confidence: High
+URL: http://testphp.vulnweb.com/AJAX/styles.css
+
+Alert: Server Leaks Version Information via "Server" HTTP Response Header Field
+Risk Level: Low
+Confidence: High
+URL: http://testphp.vulnweb.com/search.php?test=query
+
+Alert: Absence of Anti-CSRF Tokens
+Risk Level: Medium
+Confidence: Low
+URL: http://testphp.vulnweb.com/listproducts.php?cat=1
+
+Alert: Content Security Policy (CSP) Header Not Set
+Risk Level: Medium
+Confidence: High
+URL: http://testphp.vulnweb.com/listproducts.php?cat=2
+
+Alert: Missing Anti-clickjacking Header
+Risk Level: Medium
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/web-camera-a4tech/2/
+
+Alert: Content Security Policy (CSP) Header Not Set
+Risk Level: Medium
+Confidence: High
+URL: http://testphp.vulnweb.com/listproducts.php?cat=3
+
+Alert: Content Security Policy (CSP) Header Not Set
+Risk Level: Medium
+Confidence: High
+URL: http://testphp.vulnweb.com/artists.php?artist=1
+
+Alert: Content Security Policy (CSP) Header Not Set
+Risk Level: Medium
+Confidence: High
+URL: http://testphp.vulnweb.com/signup.php
+
+Alert: Content Security Policy (CSP) Header Not Set
+Risk Level: Medium
+Confidence: High
+URL: http://testphp.vulnweb.com/listproducts.php?cat=4
+
+Alert: Content Security Policy (CSP) Header Not Set
+Risk Level: Medium
+Confidence: High
+URL: http://testphp.vulnweb.com/artists.php?artist=3
+
+Alert: X-Content-Type-Options Header Missing
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/AJAX/styles.css
+
+Alert: Content Security Policy (CSP) Header Not Set
+Risk Level: Medium
+Confidence: High
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/network-attached-storage-dlink/1/
+
+Alert: Charset Mismatch (Header Versus Meta Content-Type Charset)
+Risk Level: Informational
+Confidence: Low
+URL: http://testphp.vulnweb.com/artists.php?artist=2
+
+Alert: User Controllable HTML Element Attribute (Potential XSS)
+Risk Level: Informational
+Confidence: Low
+URL: http://testphp.vulnweb.com/search.php?test=query
+
+Alert: Modern Web Application
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/listproducts.php?cat=1
+
+Alert: Absence of Anti-CSRF Tokens
+Risk Level: Medium
+Confidence: Low
+URL: http://testphp.vulnweb.com/listproducts.php?cat=2
+
+Alert: Content Security Policy (CSP) Header Not Set
+Risk Level: Medium
+Confidence: High
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/web-camera-a4tech/2/
+
+Alert: Absence of Anti-CSRF Tokens
+Risk Level: Medium
+Confidence: Low
+URL: http://testphp.vulnweb.com/listproducts.php?cat=3
+
+Alert: Absence of Anti-CSRF Tokens
+Risk Level: Medium
+Confidence: Low
+URL: http://testphp.vulnweb.com/listproducts.php?cat=4
+
+Alert: Absence of Anti-CSRF Tokens
+Risk Level: Medium
+Confidence: Low
+URL: http://testphp.vulnweb.com/artists.php?artist=3
+
+Alert: Absence of Anti-CSRF Tokens
+Risk Level: Medium
+Confidence: Low
+URL: http://testphp.vulnweb.com/artists.php?artist=1
+
+Alert: Absence of Anti-CSRF Tokens
+Risk Level: Medium
+Confidence: Low
+URL: http://testphp.vulnweb.com/signup.php
+
+Alert: User Controllable HTML Element Attribute (Potential XSS)
+Risk Level: Informational
+Confidence: Low
+URL: http://testphp.vulnweb.com/search.php?test=query
+
+Alert: Content Security Policy (CSP) Header Not Set
+Risk Level: Medium
+Confidence: High
+URL: http://testphp.vulnweb.com/artists.php?artist=2
+
+Alert: Server Leaks Version Information via "Server" HTTP Response Header Field
+Risk Level: Low
+Confidence: High
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/network-attached-storage-dlink/1/
+
+Alert: Server Leaks Version Information via "Server" HTTP Response Header Field
+Risk Level: Low
+Confidence: High
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/images/2.jpg
+
+Alert: Server Leaks Version Information via "Server" HTTP Response Header Field
+Risk Level: Low
+Confidence: High
+URL: http://testphp.vulnweb.com/listproducts.php?cat=1
+
+Alert: Modern Web Application
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/listproducts.php?cat=2
+
+Alert: Server Leaks Version Information via "Server" HTTP Response Header Field
+Risk Level: Low
+Confidence: High
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/web-camera-a4tech/2/
+
+Alert: Server Leaks Version Information via "Server" HTTP Response Header Field
+Risk Level: Low
+Confidence: High
+URL: http://testphp.vulnweb.com/listproducts.php?cat=3
+
+Alert: Absence of Anti-CSRF Tokens
+Risk Level: Medium
+Confidence: Low
+URL: http://testphp.vulnweb.com/signup.php
+
+Alert: Modern Web Application
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/artists.php?artist=3
+
+Alert: Server Leaks Version Information via "Server" HTTP Response Header Field
+Risk Level: Low
+Confidence: High
+URL: http://testphp.vulnweb.com/listproducts.php?cat=4
+
+Alert: Modern Web Application
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/artists.php?artist=1
+
+Alert: X-Content-Type-Options Header Missing
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/search.php?test=query
+
+Alert: Absence of Anti-CSRF Tokens
+Risk Level: Medium
+Confidence: Low
+URL: http://testphp.vulnweb.com/artists.php?artist=2
+
+Alert: X-Content-Type-Options Header Missing
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/network-attached-storage-dlink/1/
+
+Alert: X-Content-Type-Options Header Missing
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/images/2.jpg
+
+Alert: X-Content-Type-Options Header Missing
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/listproducts.php?cat=1
+
+Alert: Server Leaks Version Information via "Server" HTTP Response Header Field
+Risk Level: Low
+Confidence: High
+URL: http://testphp.vulnweb.com/listproducts.php?cat=2
+
+Alert: X-Content-Type-Options Header Missing
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/web-camera-a4tech/2/
+
+Alert: X-Content-Type-Options Header Missing
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/listproducts.php?cat=3
+
+Alert: Server Leaks Version Information via "Server" HTTP Response Header Field
+Risk Level: Low
+Confidence: High
+URL: http://testphp.vulnweb.com/artists.php?artist=3
+
+Alert: X-Content-Type-Options Header Missing
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/listproducts.php?cat=4
+
+Alert: Server Leaks Version Information via "Server" HTTP Response Header Field
+Risk Level: Low
+Confidence: High
+URL: http://testphp.vulnweb.com/artists.php?artist=1
+
+Alert: Server Leaks Version Information via "Server" HTTP Response Header Field
+Risk Level: Low
+Confidence: High
+URL: http://testphp.vulnweb.com/signup.php
+
+Alert: Server Leaks Information via "X-Powered-By" HTTP Response Header Field(s)
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/search.php?test=query
+
+Alert: Server Leaks Information via "X-Powered-By" HTTP Response Header Field(s)
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/network-attached-storage-dlink/1/
+
+Alert: Server Leaks Version Information via "Server" HTTP Response Header Field
+Risk Level: Low
+Confidence: High
+URL: http://testphp.vulnweb.com/images/remark.gif
+
+Alert: Modern Web Application
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/artists.php?artist=2
+
+Alert: Server Leaks Information via "X-Powered-By" HTTP Response Header Field(s)
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/listproducts.php?cat=1
+
+Alert: X-Content-Type-Options Header Missing
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/listproducts.php?cat=2
+
+Alert: Server Leaks Information via "X-Powered-By" HTTP Response Header Field(s)
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/listproducts.php?cat=3
+
+Alert: Server Leaks Information via "X-Powered-By" HTTP Response Header Field(s)
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/web-camera-a4tech/2/
+
+Alert: Server Leaks Information via "X-Powered-By" HTTP Response Header Field(s)
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/listproducts.php?cat=4
+
+Alert: X-Content-Type-Options Header Missing
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/artists.php?artist=1
+
+Alert: X-Content-Type-Options Header Missing
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/signup.php
+
+Alert: X-Content-Type-Options Header Missing
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/artists.php?artist=3
+
+Alert: X-Content-Type-Options Header Missing
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/images/remark.gif
+
+Alert: Server Leaks Version Information via "Server" HTTP Response Header Field
+Risk Level: Low
+Confidence: High
+URL: http://testphp.vulnweb.com/artists.php?artist=2
+
+Alert: Missing Anti-clickjacking Header
+Risk Level: Medium
+Confidence: Medium
+URL: http://testphp.vulnweb.com/hpp/?pp=12
+
+Alert: Server Leaks Version Information via "Server" HTTP Response Header Field
+Risk Level: Low
+Confidence: High
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/images/3.jpg
+
+Alert: Server Leaks Information via "X-Powered-By" HTTP Response Header Field(s)
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/listproducts.php?cat=2
+
+Alert: Missing Anti-clickjacking Header
+Risk Level: Medium
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/color-printer/3/
+
+Alert: Server Leaks Version Information via "Server" HTTP Response Header Field
+Risk Level: Low
+Confidence: High
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/images/1.jpg
+
+Alert: Server Leaks Version Information via "Server" HTTP Response Header Field
+Risk Level: Low
+Confidence: High
+URL: http://testphp.vulnweb.com/showimage.php?file='%20+%20pict.item(0).firstChild.nodeValue%20+%20'
+
+Alert: Server Leaks Information via "X-Powered-By" HTTP Response Header Field(s)
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/artists.php?artist=1
+
+Alert: Server Leaks Information via "X-Powered-By" HTTP Response Header Field(s)
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/signup.php
+
+Alert: Server Leaks Information via "X-Powered-By" HTTP Response Header Field(s)
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/artists.php?artist=3
+
+Alert: Server Leaks Version Information via "Server" HTTP Response Header Field
+Risk Level: Low
+Confidence: High
+URL: http://testphp.vulnweb.com/showimage.php?file=./pictures/6.jpg
+
+Alert: Missing Anti-clickjacking Header
+Risk Level: Medium
+Confidence: Medium
+URL: http://testphp.vulnweb.com/product.php?pic=1
+
+Alert: X-Content-Type-Options Header Missing
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/images/3.jpg
+
+Alert: X-Content-Type-Options Header Missing
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/artists.php?artist=2
+
+Alert: Content Security Policy (CSP) Header Not Set
+Risk Level: Medium
+Confidence: High
+URL: http://testphp.vulnweb.com/hpp/?pp=12
+
+Alert: Content Security Policy (CSP) Header Not Set
+Risk Level: Medium
+Confidence: High
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/color-printer/3/
+
+Alert: Server Leaks Version Information via "Server" HTTP Response Header Field
+Risk Level: Low
+Confidence: High
+URL: http://testphp.vulnweb.com/userinfo.php
+
+Alert: X-Content-Type-Options Header Missing
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/images/1.jpg
+
+Alert: X-Content-Type-Options Header Missing
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/showimage.php?file='%20+%20pict.item(0).firstChild.nodeValue%20+%20'
+
+Alert: X-Content-Type-Options Header Missing
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/showimage.php?file=./pictures/6.jpg
+
+Alert: Missing Anti-clickjacking Header
+Risk Level: Medium
+Confidence: Medium
+URL: http://testphp.vulnweb.com/product.php?pic=6
+
+Alert: Missing Anti-clickjacking Header
+Risk Level: Medium
+Confidence: Medium
+URL: http://testphp.vulnweb.com/guestbook.php
+
+Alert: Missing Anti-clickjacking Header
+Risk Level: Medium
+Confidence: Medium
+URL: http://testphp.vulnweb.com/product.php?pic=4
+
+Alert: Charset Mismatch (Header Versus Meta Content-Type Charset)
+Risk Level: Informational
+Confidence: Low
+URL: http://testphp.vulnweb.com/product.php?pic=1
+
+Alert: Server Leaks Information via "X-Powered-By" HTTP Response Header Field(s)
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/artists.php?artist=2
+
+Alert: Missing Anti-clickjacking Header
+Risk Level: Medium
+Confidence: Medium
+URL: http://testphp.vulnweb.com/product.php?pic=2
+
+Alert: Server Leaks Version Information via "Server" HTTP Response Header Field
+Risk Level: Low
+Confidence: High
+URL: http://testphp.vulnweb.com/hpp/?pp=12
+
+Alert: Server Leaks Version Information via "Server" HTTP Response Header Field
+Risk Level: Low
+Confidence: High
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/color-printer/3/
+
+Alert: Server Leaks Information via "X-Powered-By" HTTP Response Header Field(s)
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/userinfo.php
+
+Alert: Server Leaks Information via "X-Powered-By" HTTP Response Header Field(s)
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/showimage.php?file='%20+%20pict.item(0).firstChild.nodeValue%20+%20'
+
+Alert: Authentication Request Identified
+Risk Level: Informational
+Confidence: Low
+URL: http://testphp.vulnweb.com/secured/newuser.php
+
+Alert: Server Leaks Information via "X-Powered-By" HTTP Response Header Field(s)
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/showimage.php?file=./pictures/6.jpg
+
+Alert: Content Security Policy (CSP) Header Not Set
+Risk Level: Medium
+Confidence: High
+URL: http://testphp.vulnweb.com/product.php?pic=1
+
+Alert: Charset Mismatch (Header Versus Meta Content-Type Charset)
+Risk Level: Informational
+Confidence: Low
+URL: http://testphp.vulnweb.com/product.php?pic=6
+
+Alert: Charset Mismatch (Header Versus Meta Content-Type Charset)
+Risk Level: Informational
+Confidence: Low
+URL: http://testphp.vulnweb.com/guestbook.php
+
+Alert: Charset Mismatch (Header Versus Meta Content-Type Charset)
+Risk Level: Informational
+Confidence: Low
+URL: http://testphp.vulnweb.com/product.php?pic=4
+
+Alert: X-Content-Type-Options Header Missing
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/hpp/?pp=12
+
+Alert: Charset Mismatch (Header Versus Meta Content-Type Charset)
+Risk Level: Informational
+Confidence: Low
+URL: http://testphp.vulnweb.com/product.php?pic=2
+
+Alert: X-Content-Type-Options Header Missing
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/color-printer/3/
+
+Alert: Missing Anti-clickjacking Header
+Risk Level: Medium
+Confidence: Medium
+URL: http://testphp.vulnweb.com/secured/newuser.php
+
+Alert: Content Security Policy (CSP) Header Not Set
+Risk Level: Medium
+Confidence: High
+URL: http://testphp.vulnweb.com/product.php?pic=6
+
+Alert: Content Security Policy (CSP) Header Not Set
+Risk Level: Medium
+Confidence: High
+URL: http://testphp.vulnweb.com/product.php?pic=4
+
+Alert: Content Security Policy (CSP) Header Not Set
+Risk Level: Medium
+Confidence: High
+URL: http://testphp.vulnweb.com/guestbook.php
+
+Alert: Absence of Anti-CSRF Tokens
+Risk Level: Medium
+Confidence: Low
+URL: http://testphp.vulnweb.com/product.php?pic=1
+
+Alert: Server Leaks Information via "X-Powered-By" HTTP Response Header Field(s)
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/hpp/?pp=12
+
+Alert: Content Security Policy (CSP) Header Not Set
+Risk Level: Medium
+Confidence: High
+URL: http://testphp.vulnweb.com/product.php?pic=2
+
+Alert: Server Leaks Information via "X-Powered-By" HTTP Response Header Field(s)
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/color-printer/3/
+
+Alert: Server Leaks Version Information via "Server" HTTP Response Header Field
+Risk Level: Low
+Confidence: High
+URL: http://testphp.vulnweb.com/showimage.php?file=./pictures/3.jpg
+
+Alert: Server Leaks Version Information via "Server" HTTP Response Header Field
+Risk Level: Low
+Confidence: High
+URL: http://testphp.vulnweb.com/showimage.php?file=./pictures/1.jpg
+
+Alert: Server Leaks Version Information via "Server" HTTP Response Header Field
+Risk Level: Low
+Confidence: High
+URL: http://testphp.vulnweb.com/showimage.php?file=./pictures/7.jpg
+
+Alert: Charset Mismatch (Header Versus Meta Content-Type Charset)
+Risk Level: Informational
+Confidence: Low
+URL: http://testphp.vulnweb.com/secured/newuser.php
+
+Alert: Server Leaks Version Information via "Server" HTTP Response Header Field
+Risk Level: Low
+Confidence: High
+URL: http://testphp.vulnweb.com/showimage.php?file=./pictures/2.jpg
+
+Alert: Absence of Anti-CSRF Tokens
+Risk Level: Medium
+Confidence: Low
+URL: http://testphp.vulnweb.com/product.php?pic=4
+
+Alert: Absence of Anti-CSRF Tokens
+Risk Level: Medium
+Confidence: Low
+URL: http://testphp.vulnweb.com/product.php?pic=1
+
+Alert: Absence of Anti-CSRF Tokens
+Risk Level: Medium
+Confidence: Low
+URL: http://testphp.vulnweb.com/guestbook.php
+
+Alert: Absence of Anti-CSRF Tokens
+Risk Level: Medium
+Confidence: Low
+URL: http://testphp.vulnweb.com/product.php?pic=6
+
+Alert: Absence of Anti-CSRF Tokens
+Risk Level: Medium
+Confidence: Low
+URL: http://testphp.vulnweb.com/product.php?pic=2
+
+Alert: Content Security Policy (CSP) Header Not Set
+Risk Level: Medium
+Confidence: High
+URL: http://testphp.vulnweb.com/secured/newuser.php
+
+Alert: X-Content-Type-Options Header Missing
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/showimage.php?file=./pictures/2.jpg
+
+Alert: X-Content-Type-Options Header Missing
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/showimage.php?file=./pictures/3.jpg
+
+Alert: Missing Anti-clickjacking Header
+Risk Level: Medium
+Confidence: Medium
+URL: http://testphp.vulnweb.com/product.php?pic=5
+
+Alert: Missing Anti-clickjacking Header
+Risk Level: Medium
+Confidence: Medium
+URL: http://testphp.vulnweb.com/product.php?pic=3
+
+Alert: X-Content-Type-Options Header Missing
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/showimage.php?file=./pictures/1.jpg
+
+Alert: X-Content-Type-Options Header Missing
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/showimage.php?file=./pictures/7.jpg
+
+Alert: Absence of Anti-CSRF Tokens
+Risk Level: Medium
+Confidence: Low
+URL: http://testphp.vulnweb.com/guestbook.php
+
+Alert: Absence of Anti-CSRF Tokens
+Risk Level: Medium
+Confidence: Low
+URL: http://testphp.vulnweb.com/product.php?pic=4
+
+Alert: Server Leaks Version Information via "Server" HTTP Response Header Field
+Risk Level: Low
+Confidence: High
+URL: http://testphp.vulnweb.com/product.php?pic=1
+
+Alert: Absence of Anti-CSRF Tokens
+Risk Level: Medium
+Confidence: Low
+URL: http://testphp.vulnweb.com/product.php?pic=6
+
+Alert: Server Leaks Information via "X-Powered-By" HTTP Response Header Field(s)
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/showimage.php?file=./pictures/1.jpg
+
+Alert: Server Leaks Information via "X-Powered-By" HTTP Response Header Field(s)
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/showimage.php?file=./pictures/7.jpg
+
+Alert: Server Leaks Information via "X-Powered-By" HTTP Response Header Field(s)
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/showimage.php?file=./pictures/3.jpg
+
+Alert: Absence of Anti-CSRF Tokens
+Risk Level: Medium
+Confidence: Low
+URL: http://testphp.vulnweb.com/product.php?pic=2
+
+Alert: Server Leaks Information via "X-Powered-By" HTTP Response Header Field(s)
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/showimage.php?file=./pictures/2.jpg
+
+Alert: Server Leaks Version Information via "Server" HTTP Response Header Field
+Risk Level: Low
+Confidence: High
+URL: http://testphp.vulnweb.com/secured/newuser.php
+
+Alert: Charset Mismatch (Header Versus Meta Content-Type Charset)
+Risk Level: Informational
+Confidence: Low
+URL: http://testphp.vulnweb.com/product.php?pic=5
+
+Alert: Charset Mismatch (Header Versus Meta Content-Type Charset)
+Risk Level: Informational
+Confidence: Low
+URL: http://testphp.vulnweb.com/product.php?pic=3
+
+Alert: X-Content-Type-Options Header Missing
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/product.php?pic=1
+
+Alert: Server Leaks Version Information via "Server" HTTP Response Header Field
+Risk Level: Low
+Confidence: High
+URL: http://testphp.vulnweb.com/guestbook.php
+
+Alert: Server Leaks Version Information via "Server" HTTP Response Header Field
+Risk Level: Low
+Confidence: High
+URL: http://testphp.vulnweb.com/product.php?pic=4
+
+Alert: Server Leaks Version Information via "Server" HTTP Response Header Field
+Risk Level: Low
+Confidence: High
+URL: http://testphp.vulnweb.com/product.php?pic=6
+
+Alert: Server Leaks Version Information via "Server" HTTP Response Header Field
+Risk Level: Low
+Confidence: High
+URL: http://testphp.vulnweb.com/showimage.php?file=./pictures/3.jpg&size=160
+
+Alert: Content Security Policy (CSP) Header Not Set
+Risk Level: Medium
+Confidence: High
+URL: http://testphp.vulnweb.com/product.php?pic=5
+
+Alert: Content Security Policy (CSP) Header Not Set
+Risk Level: Medium
+Confidence: High
+URL: http://testphp.vulnweb.com/product.php?pic=3
+
+Alert: Missing Anti-clickjacking Header
+Risk Level: Medium
+Confidence: Medium
+URL: http://testphp.vulnweb.com/product.php?pic=7
+
+Alert: X-Content-Type-Options Header Missing
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/secured/newuser.php
+
+Alert: Missing Anti-clickjacking Header
+Risk Level: Medium
+Confidence: Medium
+URL: http://testphp.vulnweb.com/listproducts.php?artist=1
+
+Alert: Server Leaks Version Information via "Server" HTTP Response Header Field
+Risk Level: Low
+Confidence: High
+URL: http://testphp.vulnweb.com/showimage.php?file=./pictures/2.jpg&size=160
+
+Alert: Server Leaks Version Information via "Server" HTTP Response Header Field
+Risk Level: Low
+Confidence: High
+URL: http://testphp.vulnweb.com/product.php?pic=2
+
+Alert: Server Leaks Information via "X-Powered-By" HTTP Response Header Field(s)
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/product.php?pic=1
+
+Alert: User Controllable HTML Element Attribute (Potential XSS)
+Risk Level: Informational
+Confidence: Low
+URL: http://testphp.vulnweb.com/guestbook.php
+
+Alert: X-Content-Type-Options Header Missing
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/product.php?pic=6
+
+Alert: X-Content-Type-Options Header Missing
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/product.php?pic=4
+
+Alert: X-Content-Type-Options Header Missing
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/showimage.php?file=./pictures/3.jpg&size=160
+
+Alert: Server Leaks Information via "X-Powered-By" HTTP Response Header Field(s)
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/secured/newuser.php
+
+Alert: Absence of Anti-CSRF Tokens
+Risk Level: Medium
+Confidence: Low
+URL: http://testphp.vulnweb.com/product.php?pic=3
+
+Alert: Absence of Anti-CSRF Tokens
+Risk Level: Medium
+Confidence: Low
+URL: http://testphp.vulnweb.com/product.php?pic=5
+
+Alert: X-Content-Type-Options Header Missing
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/showimage.php?file=./pictures/2.jpg&size=160
+
+Alert: X-Content-Type-Options Header Missing
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/product.php?pic=2
+
+Alert: Charset Mismatch (Header Versus Meta Content-Type Charset)
+Risk Level: Informational
+Confidence: Low
+URL: http://testphp.vulnweb.com/product.php?pic=7
+
+Alert: Charset Mismatch (Header Versus Meta Content-Type Charset)
+Risk Level: Informational
+Confidence: Low
+URL: http://testphp.vulnweb.com/listproducts.php?artist=1
+
+Alert: X-Content-Type-Options Header Missing
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/guestbook.php
+
+Alert: Missing Anti-clickjacking Header
+Risk Level: Medium
+Confidence: Medium
+URL: http://testphp.vulnweb.com/listproducts.php?artist=3
+
+Alert: Server Leaks Information via "X-Powered-By" HTTP Response Header Field(s)
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/product.php?pic=6
+
+Alert: Server Leaks Information via "X-Powered-By" HTTP Response Header Field(s)
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/product.php?pic=4
+
+Alert: Server Leaks Information via "X-Powered-By" HTTP Response Header Field(s)
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/showimage.php?file=./pictures/3.jpg&size=160
+
+Alert: Absence of Anti-CSRF Tokens
+Risk Level: Medium
+Confidence: Low
+URL: http://testphp.vulnweb.com/product.php?pic=3
+
+Alert: Absence of Anti-CSRF Tokens
+Risk Level: Medium
+Confidence: Low
+URL: http://testphp.vulnweb.com/product.php?pic=5
+
+Alert: Server Leaks Information via "X-Powered-By" HTTP Response Header Field(s)
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/product.php?pic=2
+
+Alert: Content Security Policy (CSP) Header Not Set
+Risk Level: Medium
+Confidence: High
+URL: http://testphp.vulnweb.com/product.php?pic=7
+
+Alert: Content Security Policy (CSP) Header Not Set
+Risk Level: Medium
+Confidence: High
+URL: http://testphp.vulnweb.com/listproducts.php?artist=1
+
+Alert: Server Leaks Information via "X-Powered-By" HTTP Response Header Field(s)
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/showimage.php?file=./pictures/2.jpg&size=160
+
+Alert: Server Leaks Version Information via "Server" HTTP Response Header Field
+Risk Level: Low
+Confidence: High
+URL: http://testphp.vulnweb.com/showimage.php?file=./pictures/4.jpg
+
+Alert: Server Leaks Information via "X-Powered-By" HTTP Response Header Field(s)
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/guestbook.php
+
+Alert: Charset Mismatch (Header Versus Meta Content-Type Charset)
+Risk Level: Informational
+Confidence: Low
+URL: http://testphp.vulnweb.com/listproducts.php?artist=3
+
+Alert: Server Leaks Version Information via "Server" HTTP Response Header Field
+Risk Level: Low
+Confidence: High
+URL: http://testphp.vulnweb.com/showimage.php?file=./pictures/5.jpg
+
+Alert: Server Leaks Version Information via "Server" HTTP Response Header Field
+Risk Level: Low
+Confidence: High
+URL: http://testphp.vulnweb.com/showimage.php?file=./pictures/1.jpg&size=160
+
+Alert: Server Leaks Version Information via "Server" HTTP Response Header Field
+Risk Level: Low
+Confidence: High
+URL: http://testphp.vulnweb.com/showimage.php?file=./pictures/6.jpg&size=160
+
+Alert: Absence of Anti-CSRF Tokens
+Risk Level: Medium
+Confidence: Low
+URL: http://testphp.vulnweb.com/product.php?pic=7
+
+Alert: X-Content-Type-Options Header Missing
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/showimage.php?file=./pictures/4.jpg
+
+Alert: Missing Anti-clickjacking Header
+Risk Level: Medium
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/RateProduct-1.html
+
+Alert: Absence of Anti-CSRF Tokens
+Risk Level: Medium
+Confidence: Low
+URL: http://testphp.vulnweb.com/listproducts.php?artist=1
+
+Alert: Server Leaks Version Information via "Server" HTTP Response Header Field
+Risk Level: Low
+Confidence: High
+URL: http://testphp.vulnweb.com/product.php?pic=5
+
+Alert: Missing Anti-clickjacking Header
+Risk Level: Medium
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/BuyProduct-1/
+
+Alert: Server Leaks Version Information via "Server" HTTP Response Header Field
+Risk Level: Low
+Confidence: High
+URL: http://testphp.vulnweb.com/product.php?pic=3
+
+Alert: Missing Anti-clickjacking Header
+Risk Level: Medium
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/RateProduct-2.html
+
+Alert: Content Security Policy (CSP) Header Not Set
+Risk Level: Medium
+Confidence: High
+URL: http://testphp.vulnweb.com/listproducts.php?artist=3
+
+Alert: X-Content-Type-Options Header Missing
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/showimage.php?file=./pictures/1.jpg&size=160
+
+Alert: X-Content-Type-Options Header Missing
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/showimage.php?file=./pictures/5.jpg
+
+Alert: X-Content-Type-Options Header Missing
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/showimage.php?file=./pictures/6.jpg&size=160
+
+Alert: Absence of Anti-CSRF Tokens
+Risk Level: Medium
+Confidence: Low
+URL: http://testphp.vulnweb.com/product.php?pic=7
+
+Alert: Server Leaks Information via "X-Powered-By" HTTP Response Header Field(s)
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/showimage.php?file=./pictures/4.jpg
+
+Alert: X-Content-Type-Options Header Missing
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/product.php?pic=3
+
+Alert: Content Security Policy (CSP) Header Not Set
+Risk Level: Medium
+Confidence: High
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/BuyProduct-1/
+
+Alert: Content Security Policy (CSP) Header Not Set
+Risk Level: Medium
+Confidence: High
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/RateProduct-1.html
+
+Alert: X-Content-Type-Options Header Missing
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/product.php?pic=5
+
+Alert: Modern Web Application
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/listproducts.php?artist=1
+
+Alert: Absence of Anti-CSRF Tokens
+Risk Level: Medium
+Confidence: Low
+URL: http://testphp.vulnweb.com/listproducts.php?artist=3
+
+Alert: Content Security Policy (CSP) Header Not Set
+Risk Level: Medium
+Confidence: High
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/RateProduct-2.html
+
+Alert: Server Leaks Information via "X-Powered-By" HTTP Response Header Field(s)
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/showimage.php?file=./pictures/5.jpg
+
+Alert: Server Leaks Information via "X-Powered-By" HTTP Response Header Field(s)
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/showimage.php?file=./pictures/1.jpg&size=160
+
+Alert: Server Leaks Information via "X-Powered-By" HTTP Response Header Field(s)
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/showimage.php?file=./pictures/6.jpg&size=160
+
+Alert: Server Leaks Information via "X-Powered-By" HTTP Response Header Field(s)
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/product.php?pic=3
+
+Alert: Server Leaks Information via "X-Powered-By" HTTP Response Header Field(s)
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/product.php?pic=5
+
+Alert: Server Leaks Version Information via "Server" HTTP Response Header Field
+Risk Level: Low
+Confidence: High
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/BuyProduct-1/
+
+Alert: Server Leaks Version Information via "Server" HTTP Response Header Field
+Risk Level: Low
+Confidence: High
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/RateProduct-1.html
+
+Alert: Server Leaks Version Information via "Server" HTTP Response Header Field
+Risk Level: Low
+Confidence: High
+URL: http://testphp.vulnweb.com/listproducts.php?artist=1
+
+Alert: Missing Anti-clickjacking Header
+Risk Level: Medium
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/BuyProduct-2/
+
+Alert: Server Leaks Version Information via "Server" HTTP Response Header Field
+Risk Level: Low
+Confidence: High
+URL: http://testphp.vulnweb.com/product.php?pic=7
+
+Alert: Server Leaks Version Information via "Server" HTTP Response Header Field
+Risk Level: Low
+Confidence: High
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/RateProduct-2.html
+
+Alert: Server Leaks Version Information via "Server" HTTP Response Header Field
+Risk Level: Low
+Confidence: High
+URL: http://testphp.vulnweb.com/listproducts.php?artist=3
+
+Alert: Missing Anti-clickjacking Header
+Risk Level: Medium
+Confidence: Medium
+URL: http://testphp.vulnweb.com/listproducts.php?artist=2
+
+Alert: Missing Anti-clickjacking Header
+Risk Level: Medium
+Confidence: Medium
+URL: http://testphp.vulnweb.com/hpp/params.php?p=valid&pp=12
+
+Alert: Missing Anti-clickjacking Header
+Risk Level: Medium
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/BuyProduct-3/
+
+Alert: Missing Anti-clickjacking Header
+Risk Level: Medium
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/RateProduct-3.html
+
+Alert: X-Content-Type-Options Header Missing
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/BuyProduct-1/
+
+Alert: X-Content-Type-Options Header Missing
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/RateProduct-1.html
+
+Alert: X-Content-Type-Options Header Missing
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/listproducts.php?artist=1
+
+Alert: Content Security Policy (CSP) Header Not Set
+Risk Level: Medium
+Confidence: High
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/BuyProduct-2/
+
+Alert: X-Content-Type-Options Header Missing
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/product.php?pic=7
+
+Alert: Missing Anti-clickjacking Header
+Risk Level: Medium
+Confidence: Medium
+URL: http://testphp.vulnweb.com/cart.php
+
+Alert: X-Content-Type-Options Header Missing
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/RateProduct-2.html
+
+Alert: X-Content-Type-Options Header Missing
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/listproducts.php?artist=3
+
+Alert: Content Security Policy (CSP) Header Not Set
+Risk Level: Medium
+Confidence: High
+URL: http://testphp.vulnweb.com/hpp/params.php?p=valid&pp=12
+
+Alert: Charset Mismatch (Header Versus Meta Content-Type Charset)
+Risk Level: Informational
+Confidence: Low
+URL: http://testphp.vulnweb.com/listproducts.php?artist=2
+
+Alert: Content Security Policy (CSP) Header Not Set
+Risk Level: Medium
+Confidence: High
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/BuyProduct-3/
+
+Alert: Content Security Policy (CSP) Header Not Set
+Risk Level: Medium
+Confidence: High
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/RateProduct-3.html
+
+Alert: Server Leaks Information via "X-Powered-By" HTTP Response Header Field(s)
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/BuyProduct-1/
+
+Alert: Server Leaks Information via "X-Powered-By" HTTP Response Header Field(s)
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/RateProduct-1.html
+
+Alert: Server Leaks Information via "X-Powered-By" HTTP Response Header Field(s)
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/listproducts.php?artist=1
+
+Alert: Server Leaks Information via "X-Powered-By" HTTP Response Header Field(s)
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/product.php?pic=7
+
+Alert: Server Leaks Version Information via "Server" HTTP Response Header Field
+Risk Level: Low
+Confidence: High
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/BuyProduct-2/
+
+Alert: Charset Mismatch (Header Versus Meta Content-Type Charset)
+Risk Level: Informational
+Confidence: Low
+URL: http://testphp.vulnweb.com/cart.php
+
+Alert: Server Leaks Information via "X-Powered-By" HTTP Response Header Field(s)
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/listproducts.php?artist=3
+
+Alert: Server Leaks Information via "X-Powered-By" HTTP Response Header Field(s)
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/RateProduct-2.html
+
+Alert: Content Security Policy (CSP) Header Not Set
+Risk Level: Medium
+Confidence: High
+URL: http://testphp.vulnweb.com/listproducts.php?artist=2
+
+Alert: Server Leaks Version Information via "Server" HTTP Response Header Field
+Risk Level: Low
+Confidence: High
+URL: http://testphp.vulnweb.com/hpp/params.php?p=valid&pp=12
+
+Alert: Server Leaks Version Information via "Server" HTTP Response Header Field
+Risk Level: Low
+Confidence: High
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/BuyProduct-3/
+
+Alert: Server Leaks Version Information via "Server" HTTP Response Header Field
+Risk Level: Low
+Confidence: High
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/RateProduct-3.html
+
+Alert: X-Content-Type-Options Header Missing
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/BuyProduct-2/
+
+Alert: Server Leaks Version Information via "Server" HTTP Response Header Field
+Risk Level: Low
+Confidence: High
+URL: http://testphp.vulnweb.com/showimage.php?file=./pictures/4.jpg&size=160
+
+Alert: Content Security Policy (CSP) Header Not Set
+Risk Level: Medium
+Confidence: High
+URL: http://testphp.vulnweb.com/cart.php
+
+Alert: Server Leaks Version Information via "Server" HTTP Response Header Field
+Risk Level: Low
+Confidence: High
+URL: http://testphp.vulnweb.com/secured/style.css
+
+Alert: Absence of Anti-CSRF Tokens
+Risk Level: Medium
+Confidence: Low
+URL: http://testphp.vulnweb.com/listproducts.php?artist=2
+
+Alert: X-Content-Type-Options Header Missing
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/hpp/params.php?p=valid&pp=12
+
+Alert: X-Content-Type-Options Header Missing
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/BuyProduct-3/
+
+Alert: X-Content-Type-Options Header Missing
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/RateProduct-3.html
+
+Alert: Server Leaks Information via "X-Powered-By" HTTP Response Header Field(s)
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/BuyProduct-2/
+
+Alert: X-Content-Type-Options Header Missing
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/showimage.php?file=./pictures/4.jpg&size=160
+
+Alert: Absence of Anti-CSRF Tokens
+Risk Level: Medium
+Confidence: Low
+URL: http://testphp.vulnweb.com/cart.php
+
+Alert: X-Content-Type-Options Header Missing
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/secured/style.css
+
+Alert: Modern Web Application
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/listproducts.php?artist=2
+
+Alert: Server Leaks Information via "X-Powered-By" HTTP Response Header Field(s)
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/hpp/params.php?p=valid&pp=12
+
+Alert: Server Leaks Information via "X-Powered-By" HTTP Response Header Field(s)
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/BuyProduct-3/
+
+Alert: Server Leaks Information via "X-Powered-By" HTTP Response Header Field(s)
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/RateProduct-3.html
+
+Alert: Server Leaks Information via "X-Powered-By" HTTP Response Header Field(s)
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/showimage.php?file=./pictures/4.jpg&size=160
+
+Alert: Server Leaks Version Information via "Server" HTTP Response Header Field
+Risk Level: Low
+Confidence: High
+URL: http://testphp.vulnweb.com/showimage.php?file=./pictures/7.jpg&size=160
+
+Alert: Server Leaks Version Information via "Server" HTTP Response Header Field
+Risk Level: Low
+Confidence: High
+URL: http://testphp.vulnweb.com/cart.php
+
+Alert: Server Leaks Version Information via "Server" HTTP Response Header Field
+Risk Level: Low
+Confidence: High
+URL: http://testphp.vulnweb.com/listproducts.php?artist=2
+
+Alert: Server Leaks Version Information via "Server" HTTP Response Header Field
+Risk Level: Low
+Confidence: High
+URL: http://testphp.vulnweb.com/showimage.php?file=./pictures/5.jpg&size=160
+
+Alert: X-Content-Type-Options Header Missing
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/showimage.php?file=./pictures/7.jpg&size=160
+
+Alert: X-Content-Type-Options Header Missing
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/cart.php
+
+Alert: X-Content-Type-Options Header Missing
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/listproducts.php?artist=2
+
+Alert: X-Content-Type-Options Header Missing
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/showimage.php?file=./pictures/5.jpg&size=160
+
+Alert: Server Leaks Information via "X-Powered-By" HTTP Response Header Field(s)
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/showimage.php?file=./pictures/7.jpg&size=160
+
+Alert: Server Leaks Information via "X-Powered-By" HTTP Response Header Field(s)
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/cart.php
+
+Alert: Server Leaks Information via "X-Powered-By" HTTP Response Header Field(s)
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/listproducts.php?artist=2
+
+Alert: Server Leaks Information via "X-Powered-By" HTTP Response Header Field(s)
+Risk Level: Low
+Confidence: Medium
+URL: http://testphp.vulnweb.com/showimage.php?file=./pictures/5.jpg&size=160
+
+Alert: Cross Site Scripting (Reflected)
+Risk Level: High
+Confidence: Medium
+URL: http://testphp.vulnweb.com/secured/newuser.php
+
+Alert: Cross Site Scripting (Reflected)
+Risk Level: High
+Confidence: Medium
+URL: http://testphp.vulnweb.com/guestbook.php
+
+Alert: Cross Site Scripting (Reflected)
+Risk Level: High
+Confidence: Medium
+URL: http://testphp.vulnweb.com/search.php?test=%27%22%3CscrIpt%3Ealert%281%29%3B%3C%2FscRipt%3E
+
+Alert: Cross Site Scripting (Reflected)
+Risk Level: High
+Confidence: Medium
+URL: http://testphp.vulnweb.com/guestbook.php
+
+Alert: Cross Site Scripting (Reflected)
+Risk Level: High
+Confidence: Medium
+URL: http://testphp.vulnweb.com/userinfo.php
+
+Alert: Cross Site Scripting (Reflected)
+Risk Level: High
+Confidence: Medium
+URL: http://testphp.vulnweb.com/search.php?test=query
+
+Alert: Cross Site Scripting (Reflected)
+Risk Level: High
+Confidence: Medium
+URL: http://testphp.vulnweb.com/artists.php?artist=%3CscrIpt%3Ealert%281%29%3B%3C%2FscRipt%3E
+
+Alert: Cross Site Scripting (Reflected)
+Risk Level: High
+Confidence: Medium
+URL: http://testphp.vulnweb.com/userinfo.php
+
+Alert: Cross Site Scripting (Reflected)
+Risk Level: High
+Confidence: Medium
+URL: http://testphp.vulnweb.com/hpp/params.php?p=%3CscrIpt%3Ealert%281%29%3B%3C%2FscRipt%3E&pp=12
+
+Alert: Cross Site Scripting (Reflected)
+Risk Level: High
+Confidence: Medium
+URL: http://testphp.vulnweb.com/listproducts.php?artist=%3CscrIpt%3Ealert%281%29%3B%3C%2FscRipt%3E
+
+Alert: Cross Site Scripting (Reflected)
+Risk Level: High
+Confidence: Medium
+URL: http://testphp.vulnweb.com/product.php?pic=%3CscrIpt%3Ealert%281%29%3B%3C%2FscRipt%3E
+
+Alert: Cross Site Scripting (Reflected)
+Risk Level: High
+Confidence: Medium
+URL: http://testphp.vulnweb.com/listproducts.php?cat=%3CscrIpt%3Ealert%281%29%3B%3C%2FscRipt%3E
+
+Alert: Cross Site Scripting (Reflected)
+Risk Level: High
+Confidence: Medium
+URL: http://testphp.vulnweb.com/hpp/params.php?p=valid&pp=%3CscrIpt%3Ealert%281%29%3B%3C%2FscRipt%3E
+
+Alert: Cross Site Scripting (Reflected)
+Risk Level: High
+Confidence: Medium
+URL: http://testphp.vulnweb.com/secured/newuser.php
+
+Alert: Cross Site Scripting (Reflected)
+Risk Level: High
+Confidence: Medium
+URL: http://testphp.vulnweb.com/hpp/?pp=%22+onMouseOver%3D%22alert%281%29%3B
+
+Alert: Cross Site Scripting (Reflected)
+Risk Level: High
+Confidence: Medium
+URL: http://testphp.vulnweb.com/secured/newuser.php
+
+Alert: Cross Site Scripting (Reflected)
+Risk Level: High
+Confidence: Medium
+URL: http://testphp.vulnweb.com/secured/newuser.php
+
+Alert: Cross Site Scripting (Reflected)
+Risk Level: High
+Confidence: Medium
+URL: http://testphp.vulnweb.com/secured/newuser.php
+
+Alert: Cross Site Scripting (Reflected)
+Risk Level: High
+Confidence: Medium
+URL: http://testphp.vulnweb.com/secured/newuser.php
+
+Alert: SQL Injection - MySQL
+Risk Level: High
+Confidence: Medium
+URL: http://testphp.vulnweb.com/secured/newuser.php
+
+Alert: SQL Injection - MySQL
+Risk Level: High
+Confidence: Medium
+URL: http://testphp.vulnweb.com/userinfo.php
+
+Alert: SQL Injection - MySQL
+Risk Level: High
+Confidence: Medium
+URL: http://testphp.vulnweb.com/search.php?test=%27
+
+Alert: SQL Injection - MySQL
+Risk Level: High
+Confidence: Medium
+URL: http://testphp.vulnweb.com/userinfo.php
+
+Alert: SQL Injection - MySQL
+Risk Level: High
+Confidence: Medium
+URL: http://testphp.vulnweb.com/search.php?test=query
+
+Alert: SQL Injection - MySQL
+Risk Level: High
+Confidence: Medium
+URL: http://testphp.vulnweb.com/artists.php?artist=%27
+
+Alert: SQL Injection - MySQL
+Risk Level: High
+Confidence: Medium
+URL: http://testphp.vulnweb.com/listproducts.php?artist=%27
+
+Alert: SQL Injection - MySQL
+Risk Level: High
+Confidence: Medium
+URL: http://testphp.vulnweb.com/listproducts.php?cat=%27
+
+Alert: SQL Injection - MySQL
+Risk Level: High
+Confidence: Medium
+URL: http://testphp.vulnweb.com/product.php?pic=%27
+
+Alert: SQL Injection - MySQL
+Risk Level: High
+Confidence: Medium
+URL: http://testphp.vulnweb.com/userinfo.php
+
+Alert: SQL Injection - MySQL
+Risk Level: High
+Confidence: Medium
+URL: http://testphp.vulnweb.com/secured/newuser.php
+
+Alert: SQL Injection - MySQL
+Risk Level: High
+Confidence: Medium
+URL: http://testphp.vulnweb.com/artists.php?artist=2
+
+Alert: SQL Injection - MySQL
+Risk Level: High
+Confidence: Medium
+URL: http://testphp.vulnweb.com/listproducts.php?artist=2
+
+Alert: SQL Injection - MySQL
+Risk Level: High
+Confidence: Medium
+URL: http://testphp.vulnweb.com/product.php?pic=7
+
+Alert: XSLT Injection
+Risk Level: Medium
+Confidence: Medium
+URL: http://testphp.vulnweb.com/showimage.php?file=%3Cxsl%3Avalue-of+select%3D%22document%28%27http%3A%2F%2Ftestphp.vulnweb.com%3A22%27%29%22%2F%3E
+
+Alert: XSLT Injection
+Risk Level: Medium
+Confidence: Medium
+URL: http://testphp.vulnweb.com/showimage.php?file=%3Cxsl%3Avalue-of+select%3D%22document%28%27http%3A%2F%2Ftestphp.vulnweb.com%3A22%27%29%22%2F%3E&size=160
+
+Alert: GET for POST
+Risk Level: Informational
+Confidence: High
+URL: http://testphp.vulnweb.com/cart.php
+
+Alert: GET for POST
+Risk Level: Informational
+Confidence: High
+URL: http://testphp.vulnweb.com/guestbook.php
+
+Alert: GET for POST
+Risk Level: Informational
+Confidence: High
+URL: http://testphp.vulnweb.com/search.php?test=query
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/guestbook.php
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/userinfo.php
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/guestbook.php
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/AJAX
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/guestbook.php
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/userinfo.php
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/guestbook.php
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Flash
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/AJAX
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/guestbook.php
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Flash
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/AJAX
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/userinfo.php
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/guestbook.php
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/BuyProduct-1
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/guestbook.php
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/BuyProduct-2
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/BuyProduct-3
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/BuyProduct-1
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Flash
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/AJAX
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/userinfo.php
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/guestbook.php
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/BuyProduct-2
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/BuyProduct-1
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/BuyProduct-3
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/color-printer
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/BuyProduct-2
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/BuyProduct-1
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/BuyProduct-3
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Flash
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/AJAX
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/color-printer/3
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/guestbook.php
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/BuyProduct-2
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/BuyProduct-3
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/color-printer
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/BuyProduct-2
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/BuyProduct-1
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/BuyProduct-3
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/color-printer/3
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/AJAX
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/userinfo.php
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/guestbook.php
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/BuyProduct-3
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Flash
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/color-printer/3
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/BuyProduct-1
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/network-attached-storage-dlink
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/color-printer
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/BuyProduct-3
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/BuyProduct-2
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/color-printer/3
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/AJAX
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/BuyProduct-1
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/guestbook.php
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/color-printer
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/BuyProduct-2
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/color-printer/3
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/network-attached-storage-dlink
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/color-printer
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Flash
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/color-printer/3
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/userinfo.php
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/network-attached-storage-dlink
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/guestbook.php
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/color-printer
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/color-printer/3
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/AJAX
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/network-attached-storage-dlink
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/network-attached-storage-dlink/1
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/color-printer
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Flash
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/network-attached-storage-dlink
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/network-attached-storage-dlink
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/network-attached-storage-dlink/1
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Flash
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/AJAX
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/userinfo.php
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/network-attached-storage-dlink
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/network-attached-storage-dlink/1
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/images
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/web-camera-a4tech
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/web-camera-a4tech/2
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/network-attached-storage-dlink/1
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Flash
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/network-attached-storage-dlink/1
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/web-camera-a4tech
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/web-camera-a4tech/2
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/AJAX
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/network-attached-storage-dlink/1
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/images
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/web-camera-a4tech
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/web-camera-a4tech/2
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/guestbook.php
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/userinfo.php
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/network-attached-storage-dlink/1
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/web-camera-a4tech
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/web-camera-a4tech/2
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Flash
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/web-camera-a4tech
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/guestbook.php
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/AJAX
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/web-camera-a4tech/2
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/images
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/web-camera-a4tech
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/web-camera-a4tech/2
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/web-camera-a4tech
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/guestbook.php
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/web-camera-a4tech/2
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/userinfo.php
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Flash
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/hpp
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/AJAX
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/high
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/images
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/guestbook.php
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Flash
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/high
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/hpp
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/images
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/guestbook.php
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/userinfo.php
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/high
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/images
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/guestbook.php
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/high
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/hpp
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/images
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/high
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/guestbook.php
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/userinfo.php
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/high
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/images
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/high
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/hpp
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/images
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/guestbook.php
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/images
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/guestbook.php
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/userinfo.php
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/hpp
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/images
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/guestbook.php
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/images
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/hpp
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/images
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/guestbook.php
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/robots.txt
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/secured
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/guestbook.php
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/images
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/hpp
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/images
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/robots.txt
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/secured
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/images
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/userinfo.php
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/sitemap.xml
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/robots.txt
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/hpp
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/images
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/robots.txt
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/sitemap.xml
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/robots.txt
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/secured
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/images
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/sitemap.xml
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/robots.txt
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/sitemap.xml
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/hpp
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/userinfo.php
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/Mod_Rewrite_Shop/images
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/robots.txt
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/sitemap.xml
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/secured
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/images
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/sitemap.xml
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/sitemap.xml
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/hpp
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/userinfo.php
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/secured
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/images
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/hpp
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/userinfo.php
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/secured
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/images
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/hpp
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/secured
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/images
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/userinfo.php
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/secured
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/images
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/userinfo.php
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/secured
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/userinfo.php
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/secured
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/secured
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/userinfo.php
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/secured
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/userinfo.php
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/userinfo.php
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/userinfo.php
+
+Alert: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://testphp.vulnweb.com/userinfo.php
+
