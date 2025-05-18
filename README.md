@@ -63,7 +63,7 @@ Open PowerShell or terminal:
     .\zap.bat -daemon -port 8090 -config api.key=changeme
 
 
-▶️ **Usage**
+▶️ **Usage:**
 Once ZAP is running:
        
         python main.py
@@ -77,5 +77,5 @@ The tool will:
       Print results to the terminal
 
 
-🙋‍♀️ **Contributing**
+🙋‍♀️ **Contributing:**
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
