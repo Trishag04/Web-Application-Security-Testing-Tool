@@ -27,15 +27,16 @@ This tool is designed for security professionals, developers, and testers to aut
 
 websec_tool/
 │
+
 ├── main.py
 
-├── scanner.py           # Basic headers, cookies info
+├── scanner.py           *Basic headers, cookies info*
 
-├── form_fuzzer.py       # Selenium-based form tester
+├── form_fuzzer.py       *Selenium-based form tester*
 
-├── zap_scan.py          # OWASP ZAP API Integration
+├── zap_scan.py          *OWASP ZAP API Integration*
 
-├── report.py            # Output results to file
+├── report.py            *Output results to file*
 
 ├── requirements.txt
 
